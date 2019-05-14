@@ -15,7 +15,7 @@ all.csv: ambassador-2-envoy-image.csv envoy-image-2-envoy-commit.csv ambassador-
 		'SELECT * FROM (ambassador_2_envoy_image LEFT NATURAL JOIN envoy_image_2_envoy_commit) LEFT NATURAL JOIN ambassador_envoy_commit_2_upstream_envoy_base_commit;' \
 		| sqlite3 > $@
 all.org: %.org: %.csv
-	emacs --batch --find-file=$@ --eval='(org-table-import "$<" ",")' --eval='(save-buffer)' --kill
+	emacs --batch --find-file=$@ --eval='(org-table-import "$<" nil)' --eval='(save-buffer)' --kill
 
 envoy.git: FORCE
 	git init --bare $@
