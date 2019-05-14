@@ -16,6 +16,9 @@ all.csv: ambassador-2-envoy-image.csv envoy-image-2-envoy-commit.csv ambassador-
 		| sqlite3 > $@
 all.org: %.org: %.csv
 	emacs --batch --find-file=$@ --eval='(org-table-import "$<" nil)' --eval='(save-buffer)' --kill
+	sed -i '1p' $@
+	sed -i -E -e '1s/[^|]+/<l>/g' -e '3i|-' $@
+	emacs --batch --find-file=$@ --eval='(org-fill-paragraph)' --eval='(save-buffer)' --kill
 
 envoy.git: FORCE
 	git init --bare $@
