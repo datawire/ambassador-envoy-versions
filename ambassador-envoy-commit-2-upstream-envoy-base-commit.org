@@ -1,4 +1,4 @@
-| Ambassador Envoy commit                  | Upstream Envoy base commit               | Upstrea Envoy base comit date |
+| Envoy commit                             | Upstream Envoy base commit               | Upstrea Envoy base comit date |
 |------------------------------------------+------------------------------------------+-------------------------------|
 | 4ef8079e9ff3056bab5fe9485e7fd2bc69d27dc5 | 4ef8079e9ff3056bab5fe9485e7fd2bc69d27dc5 |                    2017-04-03 |
 | 008635a04c2b96a905d66734d9d3f3045c56710d | 419b26e942d606178321af6870fa70a294a7525c |                    2017-08-29 |
