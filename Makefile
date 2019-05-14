@@ -1,4 +1,9 @@
 all: all.org
+.PHONY: all
+
+clean:
+	rm -f -- *.csv all.org
+.PHONY: all
 
 %.csv: %.org
 	emacs --batch --find-file=$< --eval='(org-table-export "$@" "orgtbl-to-csv")' --kill
